@@ -55,7 +55,7 @@ public class Game {
   }
 
   /**
-   * Plays one round of Craps, from the come-out roll to win or loss. If this is invoked on an instance already in a terminal state ({@linl State#WIN} or {@link State#LOSS}), no exception is thrown, but the state of this Game instance doesent change.
+   * Plays one round of Craps, from the come-out roll to win or loss. If this is invoked on an instance already in a terminal state ({@link State#WIN} or {@link State#LOSS}), no exception is thrown, but the state of this Game instance doesent change.
    *
    * @return
    */

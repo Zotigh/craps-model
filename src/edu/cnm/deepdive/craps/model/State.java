@@ -1,8 +1,8 @@
 package edu.cnm.deepdive.craps.model;
 
 /**
- *makes a basic state machine fo rthe main play of a single game of craps starting with the come out roll and ending with either a win or loss based on the main bet.
- * @author Lance Zotigh &amp deep dive coding java + android Android cohort 6
+ * makes a basic state machine for the main play of a single game of craps starting with the come out roll and ending with either a win or loss based on the main bet.
+ * @author Lance Zotigh &amp; deep dive coding java + android Android cohort 6
  * @version 1.0
  */
 public enum State {
