@@ -6,6 +6,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ *
+ */
+
 public class Game {
 
   private int pointValue;
@@ -15,10 +19,21 @@ public class Game {
   private long wins;
   private long losses;
 
+  /**
+   *
+   * @param rng
+   *
+   */
+
   public Game(Random rng) {
     this.rng = rng;
     rolls = new LinkedList<>();
   }
+
+  /**
+   * prepairs this instane to play a round&mdash; i.e. returns game state to {@link State#COME_OUT}, clears the established point, and clears the list of rollls. This method <strong>must</strong> be invoked prior to {@link #play()}, even immediatly after creating and intilizing the indtance via {@link #Game(Random)}
+   * Game implements  a single play engine for the main roll/ bet of a game of Craps. Additionaly, it can be used to keep tallies across several rounds of play. Side bets are not supported.
+   */
 
   public void reset() {
     state = State.COME_OUT;
@@ -39,6 +54,11 @@ public class Game {
     rolls.add(diceRoll);
   }
 
+  /**
+   * Plays one round of Craps, from the come-out roll to win or loss. If this is invoked on an instance already in a terminal state ({@linl State#WIN} or {@link State#LOSS}), no exception is thrown, but the state of this Game instance doesent change.
+   *
+   * @return
+   */
   public State play() {
     while (state != state.WIN && state != state.LOSS) {
       roll();
@@ -51,6 +71,11 @@ public class Game {
     return state;
   }
 
+  /**
+   * returns state of game. This will  be the {@link State#COME_OUT} state after {@link State#LOSS} is invoked, and a terminal state ({@link State#WIN} or {@link State#LOSS}) after {@link #play()} is invoked
+   *
+   * @return
+   */
   public int getPointValue() {
     return pointValue;
   }
@@ -58,6 +83,11 @@ public class Game {
   public State getState() {
     return state;
   }
+
+  /**
+   * returns the tally of losses recorded since this instance was created and initilized.
+   * @return
+   */
 
   public List<int[]> getRolls() {
     List<int[]> copy = new LinkedList<>();
